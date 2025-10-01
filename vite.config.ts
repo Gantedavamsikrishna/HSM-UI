@@ -11,7 +11,6 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://hsm-sk3n.onrender.com/",
-
         changeOrigin: true,
         secure: false,
       },

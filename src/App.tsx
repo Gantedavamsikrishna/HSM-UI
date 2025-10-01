@@ -52,21 +52,21 @@ const Dashboard: React.FC = () => {
           labTestsAPI.getAll(),
         ]);
         const mapPatient = (p: any) => ({
-          id: p.id,
-          firstName: p.first_name,
-          lastName: p.last_name,
+          id: p.id || p._id,
+          firstName: p.firstName || p.first_name,
+          lastName: p.lastName || p.last_name,
           email: p.email,
           phone: p.phone,
-          dateOfBirth: p.date_of_birth,
+          dateOfBirth: p.dateOfBirth || p.date_of_birth,
           gender: p.gender,
           address: p.address,
-          emergencyContact: p.emergency_contact,
-          emergencyPhone: p.emergency_phone,
-          medicalHistory: p.medical_history,
+          emergencyContact: p.emergencyContact || p.emergency_contact,
+          emergencyPhone: p.emergencyPhone || p.emergency_phone,
+          medicalHistory: p.medicalHistory || p.medical_history,
           allergies: p.allergies,
-          bloodGroup: p.blood_group,
-          createdAt: p.created_at,
-          updatedAt: p.updated_at,
+          bloodGroup: p.bloodGroup || p.blood_group,
+          createdAt: p.createdAt || p.created_at,
+          updatedAt: p.updatedAt || p.updated_at,
         });
         const patientArr = (patientsRes.patients || patientsRes || []).map(
           mapPatient

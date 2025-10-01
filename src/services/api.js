@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://hsm-sk3n.onrender.com/api"; // Final Render backend URL for production
+const API_BASE_URL = "/api"; // Use Vite proxy for local/dev, update for production if needed
 const getAuthToken = () => {
   return localStorage.getItem("hms_auth")
     ? JSON.parse(localStorage.getItem("hms_auth")).token
